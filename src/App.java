@@ -16,11 +16,12 @@ public class App {
         Colheita colheita = new Colheita();
         Flor[] floresColhidas = campo.getFloresStream()
         .filter(
-            f -> 
-            f.getCor().equals("azul") || 
-            f.getId() <= campo.getTotalFlores() * 0.25
+            f -> f.getCor().equals("azul")
         )
+        
         .toArray(Flor[]::new);
+        
+
         for (Flor flor : floresColhidas) {
             System.out.println(flor);
         }

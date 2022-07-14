@@ -1,5 +1,5 @@
 public class Flor {
-    private static int numero;
+    
     
     private String cor;
     private int valor;
@@ -9,10 +9,10 @@ public class Flor {
         return id;
     }
 
-    public Flor(String cor, int valor) {
+    public Flor(String cor, int valor, int id) {
         this.cor = cor;
         this.valor = valor;
-        this.id = numero++;
+        this.id = id;
     }
     
     public String getCor() {

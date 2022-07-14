@@ -10,17 +10,17 @@ public class Campo {
         flores = new Flor[qtdVermelhas + qtdAmarelas + qtdAzuis];
         
         for (int i = 0; i < qtdVermelhas; i++) {
-            flores[contador] = new Flor("vermelho", 1);
+            flores[contador] = new Flor("vermelho", 1, contador);
             contador++;
         }
 
         for (int i = 0; i < qtdAmarelas; i++) {
-            flores[contador] = new Flor("amarelo", 2);
+            flores[contador] = new Flor("amarelo", 2, contador);
             contador++;
         }
 
         for (int i = 0; i < qtdAzuis; i++) {
-            flores[contador] = new Flor("azul", 3);
+            flores[contador] = new Flor("azul", 3, contador);
             contador++;
         }
         
