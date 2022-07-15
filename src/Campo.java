@@ -3,47 +3,39 @@ import java.util.Set;
 import java.util.stream.Stream;
 
 public class Campo {
-    private Flor[] flores;
+    private Flor floresVermelhas;   
+    private Flor floresAmarelas;
+    private Flor floresAzuis;
     
     
-    public Flor[] getFlores() {
-        return flores;
-    }
 
     public Campo(int qtdVermelhas, int qtdAmarelas, int qtdAzuis) {
-        int contador = 0;
-        flores = new Flor[qtdVermelhas + qtdAmarelas + qtdAzuis];
         
-        for (int i = 0; i < qtdVermelhas; i++) {
-            flores[contador] = new Flor("vermelho", 1);
-            contador++;
-        }
+        this.floresVermelhas = new Flor("vermelho", qtdVermelhas, 1);
+        this.floresAmarelas = new Flor("amarelo", qtdAmarelas, 2);
+        this.floresAzuis = new Flor("azul", qtdAzuis, 3);
         
-        for (int i = 0; i < qtdAmarelas; i++) {
-            flores[contador] = new Flor("amarelo", 2);
-            contador++;
-        }
-        
-        for (int i = 0; i < qtdAzuis; i++) {
-            flores[contador] = new Flor("azul", 3);
-            contador++;
-        }
         
     }
     
-    public Stream<Flor> getFloresStream() {
-        Stream<Flor> stream = Stream.of(flores);
-        return stream;
+    public Flor getFlorVermelha() {
+        return this.floresVermelhas;
+    }
+
+    public Flor getFlorAmarela() {
+        return this.floresAmarelas;
+    }
+
+    public Flor getFlorAzul() {
+        return this.floresAzuis;
     }
 
     public int getTotalFlores() {
-        return flores.length;
-    }
-    // Imprime todas as flores
-    public void imprimeFlores() {
-        for (Flor flor : flores) {
-            System.out.println(flor);
-        }
+        return this.floresVermelhas.getQuantidade() + this.floresAmarelas.getQuantidade() + this.floresAzuis.getQuantidade();
     }
 
+    public Stream<Flor> getFlores() {
+        
+        return Stream.of(this.floresVermelhas, this.floresAmarelas, this.floresAzuis);
+    }
 }

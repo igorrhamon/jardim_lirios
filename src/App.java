@@ -16,8 +16,8 @@ public class App {
         
         Colheita colheita = new Colheita(campo);
         colheita.fazerColheita();
-        Flor[] floresColhidas = colheita.getFloresColhidas();
-        Stream.of(floresColhidas).forEach(System.out::println);
+        Stream<Flor> floresColhidas = colheita.fazerColheita();
+        floresColhidas.forEach(System.out::println);
         
     }
 }
