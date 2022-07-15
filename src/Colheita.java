@@ -31,6 +31,14 @@ public class Colheita  {
         System.arraycopy(floresAzul, 0, flores, 0, floresAzul.length);
         System.arraycopy(floresVermelhas, 0, flores, floresAzul.length, floresVermelhas.length);
         System.arraycopy(floresAmarelas, 0, flores, floresAzul.length + floresVermelhas.length, floresAmarelas.length);
+
+        //Desordenando o array
+        for (int i = flores.length - 1; i > 0; i--) {
+            int index = (int) (Math.random() * i);
+            Flor temp = flores[index];
+            flores[index] = flores[i];
+            flores[i] = temp;
+        }
         
         this.floresColhidas = flores;
     }
