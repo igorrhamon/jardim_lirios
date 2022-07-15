@@ -1,4 +1,5 @@
 import java.util.function.Predicate;
+import java.util.stream.Stream;
 
 public class App {
     /*
@@ -13,18 +14,10 @@ public class App {
 
         Campo campo = new Campo(100, 50, 25);
         
-        Colheita colheita = new Colheita();
-        Flor[] floresColhidas = campo.getFloresStream()
-        .filter(
-            f -> f.getCor().equals("azul")
-        )
-        
-        .toArray(Flor[]::new);
-        
-
-        for (Flor flor : floresColhidas) {
-            System.out.println(flor);
-        }
+        Colheita colheita = new Colheita(campo);
+        colheita.fazerColheita();
+        Flor[] floresColhidas = colheita.getFloresColhidas();
+        Stream.of(floresColhidas).forEach(System.out::println);
         
     }
 }

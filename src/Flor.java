@@ -3,16 +3,11 @@ public class Flor {
     
     private String cor;
     private int valor;
-    private int id;
 
-    public int getId() {
-        return id;
-    }
 
-    public Flor(String cor, int valor, int id) {
+    public Flor(String cor, int valor) {
         this.cor = cor;
         this.valor = valor;
-        this.id = id;
     }
     
     public String getCor() {
@@ -29,6 +24,7 @@ public class Flor {
     
     @Override
     public String toString() {
-        return "Flor [id=" + id + ", cor=" + cor + ", valor=" + valor + "]";
+        return "Flor [cor=" + cor + ", valor=" + valor +"]";
+        
     }
 }
